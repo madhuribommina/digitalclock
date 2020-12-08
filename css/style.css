@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+body{
+    
+background-color:rgb(24, 23, 23);
+
+}
+h2{
+    font-family: 'Sansita Swashed', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    color: blanchedalmond !important;
+}
+.card{
+    box-sizing: border-box;
+    box-shadow: 0 10px 30px blanchedalmond;
+}
+.card .card-body{
+    right: 10px;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Clock using js</title>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <!--Fontawesome css-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"/>
+        <!-- ekko css -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" integrity="sha512-Velp0ebMKjcd9RiCoaHhLXkR1sFoCCWXNp6w4zj1hfMifYB5441C+sKeBl/T/Ka6NjBiRfBBQRaQq65ekYz3UQ==" crossorigin="anonymous" />
+
+        <!--custom  css -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Sansita+Swashed:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container ">
+            <h2 class="mt-3">Digital Clock</h2>
+            <div class="countdown  card-deck d-flex justify-content-center align-items-center col-md-12" style="height: 70vh;">
+                <div class="card  text-center bg-dark text-white" style="height: 250px; font-size: 50px;" >
+                    <div class="card-body" >
+                        <p class="card-text" id="days"></p>
+                        <p class="card-text"style="color: cadetblue;">Days</p>
+                    </div>   
+                </div>
+                <div class="card  text-center bg-dark text-white" style="height: 250px; font-size: 50px;">
+                    <div class="card-body" >
+                        <p class="card-text" id="hrs"></p>
+                        <p class="card-text" style="color: cadetblue;">Hours</p>
+                    </div>   
+                </div>
+                <div class="card  text-center bg-dark text-white" style="height: 250px; font-size: 50px;" >
+                    <div class="card-body" >
+                        <p class="card-text" id="min"></p>
+                        <p class="card-text" style="color: cadetblue;">Minutes</p>
+                    </div>   
+                </div>
+                <div class="card  text-center bg-dark text-white" style="height: 250px; font-size: 50px;" >
+                    <div class="card-body" >
+                        <p class="card-text" id="sec"></p>
+                        <p class="card-text" style="color: cadetblue;">Seconds</p>
+                    </div>   
+                </div>
+                
+                
+            </div>
+        </div>
+        <!--Bootstrap js-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <!--ekko script-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js" integrity="sha512-YibiFIKqwi6sZFfPm5HNHQYemJwFbyyYHjrr3UT+VobMt/YBo1kBxgui5RWc4C3B4RJMYCdCAJkbXHt+irKfSA==" crossorigin="anonymous"></script>
+        <script type="text/javascript" >
+        setInterval(digitalclock, 1000);
+        function digitalclock(){
+            let date = new Date();
+            week = ["Sunday", "Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday"];
+            /* let week = new Array(7);
+            week[0] = "Sunday";
+            week[1] = "Monday";
+            week[2] = "Tuesday";
+            week[3] = "Wednesday";
+            week[4] = "Thursday";
+            week[5] = "Friday";
+            week[6] = "Saturday";*/
+            document.getElementById("days").textContent =week[date.getDay()];
+            document.getElementById("hrs").textContent = date.getHours();
+            document.getElementById("min").textContent = date.getMinutes();
+            document.getElementById("sec").textContent = date.getSeconds()
+        }
+        
+        
+        </script>
+    </body>
+</html>    
